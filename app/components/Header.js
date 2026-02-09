@@ -1,63 +1,145 @@
-import React from 'react'
+'use client'
+
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 export default function Header() {
+  const [open, setOpen] = useState(false)
+
+  // Close on ESC (keyboard accessibility)
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
+
   return (
-    <div className='flex items-center justify-between px-4'>
-      <svg width="280" height="80" viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="indiaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#FF8C1A" />
-            <stop offset="100%" stopColor="#1FAA59" />
-          </linearGradient>
-        </defs>
+    <>
+      {/* HEADER */}
+      <div className='flex items-center justify-between px-4 relative z-50 bg-white'>
 
-        {/* <!-- Icon --> */}
-        <circle cx="36" cy="40" r="28" fill="url(#indiaGrad)" />
-        <path d="M28 28c4-6 12-6 16 0" stroke="white" fill="none" />
-        <circle cx="36" cy="42" r="5" fill="white" />
+        {/* Logo */}
+        <svg width="280" height="80" viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="indiaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#FF8C1A" />
+              <stop offset="100%" stopColor="#1FAA59" />
+            </linearGradient>
+          </defs>
 
-        {/* <!-- Brand Name --> */}
-        <text x="75" y="46"
-          fontSize="36"
-          fontWeight="800"
-          fontFamily="Poppins, Arial, sans-serif"
-          fill="#0f172a">
-          Swadya
-        </text>
+          <circle cx="36" cy="40" r="28" fill="url(#indiaGrad)" />
+          <path d="M28 28c4-6 12-6 16 0" stroke="white" fill="none" />
+          <circle cx="36" cy="42" r="5" fill="white" />
 
-        {/* <!-- Tagline --> */}
-        <text x="77" y="64"
-          fontSize="13"
-          fontWeight="500"
-          fill="#475569">
-          Taste at your doorstep
-        </text>
-      </svg>
+          <text x="75" y="46" fontSize="36" fontWeight="800" fill="#0f172a">
+            Swadya
+          </text>
+          <text x="77" y="64" fontSize="13" fill="#475569">
+            Taste at your doorstep
+          </text>
+        </svg>
 
+        {/* DESKTOP NAV */}
+        <div className='hidden lg:flex items-center gap-12'>
+          <ul className='flex gap-3'>
+            {['Home', 'Special Offers', 'Restaurants', 'Track Order'].map(item => (
+              <li
+                key={item}
+                className='p-2 px-9 hover:bg-[#FC8A06] rounded-full cursor-pointer'
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
 
-      <div className='flex items-center gap-12'>
-        <ul className='flex items-center justify-between gap-3'>
-          <li className='p-2 px-9 transition-all duration-150 ease-in-out hover:bg-[#FC8A06] rounded-full cursor-pointer'><button className='cursor-pointer'>Home</button></li>
-          <li className='p-2 px-9 transition-all duration-150 ease-in-out hover:bg-[#FC8A06] rounded-full'><button>Browser Menu</button></li>
-          <li className='p-2 px-9 transition-all duration-150 ease-in-out hover:bg-[#FC8A06] rounded-full cursor-pointer'><button className='cursor-pointer'>Special Offers</button></li>
-          <li className='p-2 px-9 transition-all duration-150 ease-in-out hover:bg-[#FC8A06] rounded-full cursor-pointer'><button className='cursor-pointer'>Restaurants</button></li>
-          <li className='p-2 px-9 transition-all duration-150 ease-in-out hover:bg-[#FC8A06] rounded-full cursor-pointer'><button className='cursor-pointer'>Track Order</button></li>
-        </ul>
+          <button className='flex items-center gap-1 p-3.5 px-6.5 bg-black rounded-full text-white text-sm'>
+            <Image src='/assets/MaleUser.png' width={30} height={27} alt='user' />
+            Login/Signup
+          </button>
+        </div>
 
-        <button className='flex items-center gap-1 p-3.5 px-6.5 bg-black rounded-full text-white text-sm cursor-pointer'>
-          <span className='w-6'>
-            <Image
-              src='/assets/MaleUser.png'
-              width={30.97}
-              height={27}
-              alt='logo'
-            />
-          </span>
-          <span>Login/Signup</span>
+        {/* MOBILE MENU BUTTON */}
+        <button
+          aria-label="Open menu"
+          className="lg:hidden p-2 z-50"
+          onClick={() => setOpen(!open)}
+        >
+          <div className="space-y-1.5">
+            <span className={`block h-0.5 w-7 bg-black transition ${open ? 'rotate-45 translate-y-2' : ''}`} />
+            <span className={`block h-0.5 w-7 bg-black transition ${open ? 'opacity-0' : ''}`} />
+            <span className={`block h-0.5 w-7 bg-black transition ${open ? '-rotate-45 -translate-y-2' : ''}`} />
+          </div>
         </button>
       </div>
 
-    </div>
+      {/* BACKDROP */}
+      {open && (
+        <div
+          className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
+          onClick={() => setOpen(false)}
+        />
+      )}
+
+      {/* MOBILE SLIDE MENU */}
+      <div
+        className={`lg:hidden
+    fixed top-0 left-0 w-full bg-white z-40
+    transform transition-transform duration-300
+    ${open ? 'translate-y-0' : '-translate-y-full'}
+  `}
+      >
+        <div className="pt-24 pb-10 px-6 flex flex-col gap-4 justify-center items-center">
+
+          {['Home', 'Special Offers', 'Restaurants', 'Track Order'].map(item => (
+            <button
+              key={item}
+              onClick={() => setOpen(false)}
+              aria-current="page"
+              className="w-full text-lg font-medium px-4 py-2 rounded-full
+                  cursor-pointer
+                  transition-all duration-150
+                  
+                  /* hover (desktop) */
+                  hover:bg-gray-900 hover:text-white
+                  
+                  /* tap (mobile) */
+                  active:scale-95 active:bg-gray-900 active:text-white
+                  
+                  /* keyboard focus */
+                  focus:outline-none
+                  focus-visible:ring-2
+                  focus-visible:ring-[#FC8A06]
+                  focus-visible:ring-offset-2
+                "
+            >
+              {item}
+            </button>
+          ))}
+
+          <button
+            className="
+        mt-6 w-full
+        bg-black text-white
+        py-3 rounded-full
+        font-semibold
+        transition-all duration-150
+
+        hover:bg-gray-900
+        active:scale-95
+        focus:outline-none
+        focus-visible:ring-2
+        focus-visible:ring-[#FC8A06]
+        focus-visible:ring-offset-2
+      "
+          >
+            Login / Signup
+          </button>
+
+        </div>
+      </div>
+
+    </>
   )
 }

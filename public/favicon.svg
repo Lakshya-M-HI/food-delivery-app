@@ -1,0 +1,26 @@
+<svg
+  viewBox="0 0 80 80"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <linearGradient id="indiaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF8C1A"/>
+      <stop offset="100%" stop-color="#1FAA59"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Main Circle -->
+  <circle cx="40" cy="40" r="30" fill="url(#indiaGrad)" />
+
+  <!-- Smile / Bowl curve -->
+  <path
+    d="M30 30c6-8 14-8 20 0"
+    stroke="white"
+    stroke-width="3"
+    fill="none"
+    stroke-linecap="round"
+  />
+
+  <!-- Center dot -->
+  <circle cx="40" cy="45" r="5" fill="white" />
+</svg>

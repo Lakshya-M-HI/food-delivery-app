@@ -3,20 +3,20 @@ import Image from 'next/image'
 
 export default function HeroImage() {
     return (
-        <div className='relative h-152.5 rounded-lg border border-gray-300 bg-[#FAFAFA] flex items-center p-3'>
+        <div className='relative h-152.5 max-xl:max-h-120 max-lg:max-h-110 max-md:max-h-80 rounded-lg border border-gray-300 bg-[#FAFAFA] flex items-center p-3'>
 
             <div className='flex flex-col justify-center -mt-13 w-fit p-3 px-5 gap-6 '>
-                <p>Order Restaurant food, takeaway and groceries.</p>
+                <p className='max-md:text-sm'>Order Restaurant food, takeaway and groceries.</p>
 
                 <div className='flex flex-col gap-2'>
-                    <h1 className='text-5xl font-semibold'>Feast Your Senses,</h1>
-                    <h1 className='text-5xl font-semibold text-[#FC8A06]'>Fast and Fresh</h1>
+                    <h1 className='md:text-5xl max-md:text-2xl font-semibold'>Feast Your Senses,</h1>
+                    <h1 className='md:text-5xl max-md:text-2xl font-semibold text-[#FC8A06]'>Fast and Fresh</h1>
                 </div>
 
-                <button className='p-2 px-9 transition-all duration-150 ease-in-out bg-[#FC8A06] rounded-full cursor-pointer w-fit'>My first Order</button>
+                <button className='p-2 px-9 transition-all duration-150 ease-in-out bg-[#FC8A06] rounded-full cursor-pointer w-fit max-md:text-sm'>My first Order</button>
             </div>
 
-            <div className='absolute bottom-0 right-0 w-156.5 h-[93%] bg-[#FC8A06] rounded-tl-[282.5px] rounded-lg'>
+            <div className='absolute bottom-0 right-0 w-156.5 h-[93%] bg-[#FC8A06] rounded-tl-[282.5px] rounded-lg hidden min-[1125px]:block'>
 
                 <div className='absolute top-13 right-105 w-fit'>
                     <div className='absolute w-77.5 py-1 px-3 rounded-xl border border-gray-300 bg-[#FAFAFA] z-20'>
@@ -152,15 +152,29 @@ export default function HeroImage() {
             </div>
 
 
-            <div className='absolute z-20 left-55 bottom-0'>
+            <div
+                className="
+    absolute z-20 bottom-0
+    left-1/2 -translate-x-1/2
+    xl:left-[19%] lg:left-[70%] md:left-[75%] max-[550px]:left-[60%]  xl:translate-x-0
+  "
+            >
                 <Image
-                    src='/assets/Untitled-1.png'
+                    src="/assets/Untitled-1.png"
                     width={805}
                     height={537}
-                    alt='advertisement'
+                    alt="advertisement"
+                    className="w-[280px]
+                                sm:w-[280px]
+                                md:min-w-[620px]
+                                lg:min-w-[680px]
+                                xl:w-[805px]
+                                max-w-full
+                                "
                 />
             </div>
-            <div className='absolute z-10 right-90 bottom-0'>
+
+            <div className='absolute z-10 right-90 bottom-0 hidden min-[1324px]:block'>
                 <Image
                     src='/assets/Untitled-2.png'
                     width={377}

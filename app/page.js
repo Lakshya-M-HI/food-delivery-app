@@ -20,9 +20,11 @@ export default function Home() {
       {/* <div className='border border-red-500'> */}
       <Header />
       {/* </div> */}
+      
       {/* <div className='border border-red-500'> */}
       <HeroImage />
       {/* </div> */}
+
       {/* <div className='border border-red-500'> */}
       <RajyaSpecial />
       {/* </div> */}

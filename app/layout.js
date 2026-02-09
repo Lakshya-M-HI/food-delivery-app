@@ -10,6 +10,9 @@ const poppins = Poppins({
 export const metadata = {
   title: "Swadya | Food Delivery",
   description: "Curated meals, trusted kitchens aur smooth food delivery experience",
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({ children }) {
