@@ -60,16 +60,44 @@ export default function Footer() {
                         Get Exclusive Deals in your Inbox
                     </h3>
 
-                    <div className="flex bg-white rounded-full  mb-2">
+                    <div
+                        className="
+                                flex
+                                w-full
+                                max-w-md
+                                bg-white
+                                rounded-full
+                                overflow-hidden
+                                mb-2
+                            "
+                    >
                         <input
                             type="email"
-                            placeholder="youremail@gmail.com"
-                            className="flex-1 px-5 py-3 outline-none"
+                            placeholder="your@gmail.com"
+                            className="
+                                        flex-1
+                                        px-4 sm:px-5
+                                        py-2.5 sm:py-3
+                                        text-sm sm:text-base
+                                        outline-none
+                                        min-w-0
+                                        "
                         />
-                        <button className="bg-[#FC8A06] text-white px-4 font-semibold rounded-r-full">
+
+                        <button
+                            className="
+                                        bg-[#FC8A06]
+                                        text-white
+                                        px-4 sm:px-6
+                                        font-semibold
+                                        text-sm sm:text-base
+                                        whitespace-nowrap
+                                        "
+                        >
                             Subscribe
                         </button>
                     </div>
+
 
                     <p className="text-xs text-gray-500 mb-4">
                         we won’t spam, read our <span className="underline">email policy</span>
@@ -117,7 +145,7 @@ export default function Footer() {
                         <span>Privacy Policy</span>
                         <span>Terms</span>
                         <span>Pricing</span>
-                        <span>Do not sell or share my personal information</span>
+                        <span>Do </span>
                     </div>
                 </div>
             </div>

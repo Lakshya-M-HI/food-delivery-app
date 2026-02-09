@@ -44,13 +44,16 @@ export default function Header() {
         {/* DESKTOP NAV */}
         <div className='hidden lg:flex items-center gap-12'>
           <ul className='flex gap-3'>
-            {['Home', 'Special Offers', 'Restaurants', 'Track Order'].map(item => (
-              <li
-                key={item}
-                className='p-2 px-9 hover:bg-[#FC8A06] rounded-full cursor-pointer'
-              >
-                {item}
-              </li>
+            {[{name: 'Home', path: '/'}, {name: 'Restaurants', path: '/Restaurants'}, {name: 'Cart', path: '/Cart'}].map(item => (
+              <a
+                key={item.name}
+                href={`${item.path}`}>
+                <li
+                  className='p-2 px-9 hover:bg-[#FC8A06] rounded-full cursor-pointer'
+                >
+                  {item.name}
+                </li>
+              </a>
             ))}
           </ul>
 
@@ -92,9 +95,10 @@ export default function Header() {
       >
         <div className="pt-24 pb-10 px-6 flex flex-col gap-4 justify-center items-center">
 
-          {['Home', 'Special Offers', 'Restaurants', 'Track Order'].map(item => (
-            <button
-              key={item}
+          {[{name: 'Home', path: '/'}, {name: 'Restaurants', path: '/Restaurants'}, {name: 'Cart', path: '/Cart'}].map(item => (
+           <a key={item.name}
+            href={item.path}>
+               <button
               onClick={() => setOpen(false)}
               aria-current="page"
               className="w-full text-lg font-medium px-4 py-2 rounded-full
@@ -114,8 +118,9 @@ export default function Header() {
                   focus-visible:ring-offset-2
                 "
             >
-              {item}
+              {item.name}
             </button>
+           </a>
           ))}
 
           <button

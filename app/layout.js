@@ -1,5 +1,6 @@
 import { Poppins } from 'next/font/google'
 import "./globals.css";
+import ContextProvider from './useContext/ContextProvider';
 
 
 const poppins = Poppins({
@@ -21,8 +22,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${poppins.className} antialiased`}
       >
-
-        {children}
+        <ContextProvider>
+          {children}
+        </ContextProvider>
       </body>
     </html>
   );
