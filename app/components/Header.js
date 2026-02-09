@@ -101,22 +101,7 @@ export default function Header() {
                <button
               onClick={() => setOpen(false)}
               aria-current="page"
-              className="w-full text-lg font-medium px-4 py-2 rounded-full
-                  cursor-pointer
-                  transition-all duration-150
-                  
-                  /* hover (desktop) */
-                  hover:bg-gray-900 hover:text-white
-                  
-                  /* tap (mobile) */
-                  active:scale-95 active:bg-gray-900 active:text-white
-                  
-                  /* keyboard focus */
-                  focus:outline-none
-                  focus-visible:ring-2
-                  focus-visible:ring-[#FC8A06]
-                  focus-visible:ring-offset-2
-                "
+              className="w-full text-lg font-medium px-4 py-2 rounded-full cursor-pointer transition-all duration-150 hover:bg-gray-900 hover:text-whiteactive:scale-95 active:bg-gray-900 active:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FC8A06]  focus-visible:ring-offset-2"
             >
               {item.name}
             </button>
@@ -124,20 +109,7 @@ export default function Header() {
           ))}
 
           <button
-            className="
-        mt-6 w-full
-        bg-black text-white
-        py-3 rounded-full
-        font-semibold
-        transition-all duration-150
-
-        hover:bg-gray-900
-        active:scale-95
-        focus:outline-none
-        focus-visible:ring-2
-        focus-visible:ring-[#FC8A06]
-        focus-visible:ring-offset-2
-      "
+            className="mt-6 w-full bg-black text-white py-3 rounded-full font-semibold transition-all duration-150 hover:bg-gray-900 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FC8A06] focus-visible:ring-offset-2"
           >
             Login / Signup
           </button>

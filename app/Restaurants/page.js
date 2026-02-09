@@ -30,9 +30,7 @@ export default function RestaurantGrid() {
                             placeholder="Search restaurants, dish or location…"
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
-                            className="flex-1 px-5 py-3 outline-none text-sm md:text-base
-            "
-                        />
+                            className="flex-1 px-5 py-3 outline-none text-sm md:text-base" />
                         <button className="px-6 text-[#FC8A06] font-semibold">
                             Search
                         </button>
@@ -41,29 +39,12 @@ export default function RestaurantGrid() {
 
                 {/* GRID */}
                 <div
-                    className="
-                                grid
-                                grid-cols-1
-                                sm:grid-cols-2
-                                lg:grid-cols-3
-                                xl:grid-cols-4
-                                gap-6
-                                "
+                    className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 "
                 >
                     {filteredrestaurants.map((item) => (
                         <div
                             key={item.id}
-                            className="relative z-20 
-                                            group p-3
-                                            bg-white
-                                            rounded-2xl
-                                            overflow-hidden
-                                            border border-gray-200
-                                            shadow-sm
-                                            transition-all duration-300
-                                            hover:shadow-xl
-                                            hover:-translate-y-1
-                                            "
+                            className="relative z-20   group p-3  bg-white  rounded-2xl  overflow-hidden  border border-gray-200  shadow-sm  transition-all duration-300  hover:shadow-xl  hover:-translate-y-1  "
                         >
                             {/* IMAGE */}
                             <div className="absolute inset-0 -z-10 h-[180px] overflow-hidden">
@@ -76,27 +57,13 @@ export default function RestaurantGrid() {
 
                                 {/* SHADOW + BLUR LAYER */}
                                 <div
-                                    className="
-                                    absolute inset-0
-                                    bg-linear-to-t
-                                    from-black/80
-                                    via-black/30
-                                    to-black/10
-                                    backdrop-blur-[2px]
-                                    "
+                                    className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-black/10 backdrop-blur-[2px] "
                                 />
 
                                 {/* OFFER BADGE */}
                                 {item.offers && (
                                     <span
-                                        className="
-                                            absolute bottom-0 right-0
-                                            bg-[#FC8A06]
-                                            text-white text-xs font-semibold
-                                            px-3 py-1 rounded-r-b-full
-                                            shadow-md
-                                            z-10
-                                        "
+                                        className="absolute bottom-0 right-0 bg-[#FC8A06] text-white textfont-semibold  px-3 py-1 rounded-r-b-full  shadow-md  z-10 "
                                     >
                                         {item.offers}
                                     </span>

@@ -74,17 +74,7 @@ export default function CartItems() {
         </div>
 
         <button
-          className="
-            w-full
-            bg-[#FC8A06]
-            text-white
-            py-3
-            rounded-xl
-            font-semibold
-            text-base
-            transition
-            hover:bg-[#e07b05]
-            active:scale-95
+          className="  w-full   bg-[#FC8A06]  text-white py-3 rounded-xl font-semibold text-base transition hover:bg-[#e07b05] active:scale-95
           "
         >
           Proceed to Checkout
