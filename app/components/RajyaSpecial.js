@@ -19,10 +19,11 @@ export default function RajyaSpecial() {
 
     return (
         <div className='relative min-h-92 rounded-lg flex flex-col gap-1 justify-center my-6'>
+           
             <div className='flex justify-between'>
-                <h2 className='text-3xl font-bold ml-5'>Rajya Special - Flat 50% OFF</h2>
+                <h2 className=' text-[16px] sm:text-3xl font-bold sm:ml-5'>Rajya Special - Flat 50% OFF</h2>
 
-                <span><button className='border bg-gray-100 border-gray-400 p-2 rounded-full px-4 transition-all duration-150 hover:bg-blue-100'>View all</button></span>
+                <span><button className='border bg-gray-100 border-gray-400 p-1 px-2 sm:p-2 rounded-full sm:px-4 transition-all duration-150 hover:bg-blue-100 text-[8px]'>View all</button></span>
             </div>
 
 
@@ -36,7 +37,7 @@ export default function RajyaSpecial() {
                     {rajya.map((item) => (
                         <div
                             key={item.state}
-                            className="group relative min-w-105 h-65 rounded-2xl overflow-hidden"
+                            className="group relative min-w-105 h-65 rounded-lg overflow-hidden"
                         >
                             {/* Image */}
                             <Image
@@ -78,8 +79,8 @@ export default function RajyaSpecial() {
             </div>
 
 
-            <div className='absolute top-1/2 bg-black/70 p-3 rounded-full text-white -translate-y-1/2 left-0 text-2xl'>&lt;</div>
-            <div className='absolute top-1/2 bg-black/60 p-3 rounded-full text-white -translate-y-1/2 right-0 text-2xl'>&gt;</div>
+            <div className='absolute top-1/2 bg-black/70 p-3 rounded-full text-white -translate-y-1/2 left-0 text-2xl hidden lg:block'>&lt;</div>
+            <div className='absolute top-1/2 bg-black/60 p-3 rounded-full text-white -translate-y-1/2 right-0 text-2xl hidden lg:block'>&gt;</div>
 
         </div>
 

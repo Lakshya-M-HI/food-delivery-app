@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -44,8 +45,8 @@ export default function Header() {
         {/* DESKTOP NAV */}
         <div className='hidden lg:flex items-center gap-12'>
           <ul className='flex gap-3'>
-            {[{name: 'Home', path: '/'}, {name: 'Restaurants', path: '/Restaurants'}, {name: 'Cart', path: '/Cart'}].map(item => (
-              <a
+            {[{ name: 'Home', path: '/' }, { name: 'Restaurants', path: '/Restaurants' }, { name: 'Cart', path: '/Cart' }].map(item => (
+              <Link
                 key={item.name}
                 href={`${item.path}`}>
                 <li
@@ -53,7 +54,7 @@ export default function Header() {
                 >
                   {item.name}
                 </li>
-              </a>
+              </Link>
             ))}
           </ul>
 
@@ -95,17 +96,17 @@ export default function Header() {
       >
         <div className="pt-24 pb-10 px-6 flex flex-col gap-4 justify-center items-center">
 
-          {[{name: 'Home', path: '/'}, {name: 'Restaurants', path: '/Restaurants'}, {name: 'Cart', path: '/Cart'}].map(item => (
-           <a key={item.name}
-            href={item.path}>
-               <button
-              onClick={() => setOpen(false)}
-              aria-current="page"
-              className="w-full text-lg font-medium px-4 py-2 rounded-full cursor-pointer transition-all duration-150 hover:bg-gray-900 hover:text-whiteactive:scale-95 active:bg-gray-900 active:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FC8A06]  focus-visible:ring-offset-2"
-            >
-              {item.name}
-            </button>
-           </a>
+          {[{ name: 'Home', path: '/' }, { name: 'Restaurants', path: '/Restaurants' }, { name: 'Cart', path: '/Cart' }].map(item => (
+            <a key={item.name}
+              href={item.path}>
+              <button
+                onClick={() => setOpen(false)}
+                aria-current="page"
+                className="w-full text-lg font-medium px-4 py-2 rounded-full cursor-pointer transition-all duration-150 hover:bg-gray-900 hover:text-whiteactive:scale-95 active:bg-gray-900 active:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FC8A06]  focus-visible:ring-offset-2"
+              >
+                {item.name}
+              </button>
+            </a>
           ))}
 
           <button

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 
 export default function ConnectSection() {
@@ -6,7 +7,7 @@ export default function ConnectSection() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
                 {/* Partner with us */}
-                <div className="relative h-100 rounded-2xl overflow-hidden group">
+                <div className="relative h-100 max-[500px]:h-120 rounded-2xl overflow-hidden group">
                     <Image
                         src="/assets/connectBussiness.jpg"
                         alt="Partner with us"
@@ -30,9 +31,11 @@ export default function ConnectSection() {
                             Partner with us
                         </h2>
 
-                        <button className="bg-[#FC8A06] px-8 py-3 rounded-full font-semibold hover:bg-[#e07b05] transition">
-                            Get Started
-                        </button>
+                        <Link href='/partner'>
+                            <button className="bg-[#FC8A06] px-8 py-3 rounded-full font-semibold hover:bg-[#e07b05] transition">
+                                Get Started
+                            </button>
+                        </Link>
                     </div>
                 </div>
 
@@ -45,7 +48,7 @@ export default function ConnectSection() {
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
 
-                     {/* Gradient overlay – dark at bottom, transparent at top */}
+                    {/* Gradient overlay – dark at bottom, transparent at top */}
                     <div className="absolute inset-0 bg-linear-to-t
   from-black/80 via-black/40 to-transparent" />
 
@@ -61,9 +64,11 @@ export default function ConnectSection() {
                             Ride with us
                         </h2>
 
-                        <button className="bg-[#FC8A06] px-8 py-3 rounded-full font-semibold hover:bg-[#e07b05] transition">
-                            Get Started
-                        </button>
+                       <Link href='/delivery-partner'>
+                            <button className="bg-[#FC8A06] px-8 py-3 rounded-full font-semibold hover:bg-[#e07b05] transition">
+                                Get Started
+                            </button>
+                        </Link>
                     </div>
                 </div>
 

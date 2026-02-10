@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function HeroImage() {
     return (
-        <div className='relative h-152.5 max-xl:max-h-120 max-lg:max-h-110 max-md:max-h-80 rounded-lg border border-gray-300 bg-[#FAFAFA] flex items-center p-3'>
+        <div className='relative h-152.5 max-xl:max-h-120 max-lg:max-h-110 max-md:max-h-80 rounded-lg border border-gray-300 bg-[#FAFAFA] flex items-center p-3 overflow-hidden'>
 
             <div className='flex flex-col justify-center -mt-13 w-fit p-3 px-5 gap-6 '>
                 <p className='max-md:text-sm'>Order Restaurant food, takeaway and groceries.</p>

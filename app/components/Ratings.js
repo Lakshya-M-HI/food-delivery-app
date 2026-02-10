@@ -8,8 +8,8 @@ export default function StatsBar() {
                 rounded-2xl
                 py-8 px-6
                 grid grid-cols-2 md:grid-cols-4
-                text-white
-                divide-x divide-white/30
+                text-white gap-3
+                min-md:divide-x divide-white/30
       ">
                 {[
                     { value: "546+", label: "Registered Riders" },
@@ -18,8 +18,8 @@ export default function StatsBar() {
                     { value: "17,457+", label: "Food items" },
                 ].map((item, i) => (
                     <div key={i} className="text-center px-4">
-                        <h3 className="text-4xl font-bold">{item.value}</h3>
-                        <p className="mt-2 text-sm font-medium">{item.label}</p>
+                        <h3 className="text-[16px] sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold">{item.value}</h3>
+                        <p className="md:mt-2 text-sm font-medium">{item.label}</p>
                     </div>
                 ))}
             </div>
