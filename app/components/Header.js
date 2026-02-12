@@ -22,6 +22,7 @@ export default function Header() {
       <div className='flex items-center justify-between px-4 relative z-50 bg-white'>
 
         {/* Logo */}
+        <Link href={'/'}>
         <svg width="280" height="80" viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="indiaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -41,11 +42,12 @@ export default function Header() {
             Taste at your doorstep
           </text>
         </svg>
+        </Link>
 
         {/* DESKTOP NAV */}
         <div className='hidden lg:flex items-center gap-12'>
           <ul className='flex gap-3'>
-            {[{ name: 'Home', path: '/' }, { name: 'Restaurants', path: '/Restaurants' }, { name: 'Cart', path: '/Cart' }].map(item => (
+            {[{ name: 'Home', path: '/' }, { name: 'Restaurants', path: '/restaurants' }, { name: 'Cart', path: '/Cart' }].map(item => (
               <Link
                 key={item.name}
                 href={`${item.path}`}>
@@ -58,7 +60,7 @@ export default function Header() {
             ))}
           </ul>
 
-          <button className='flex items-center gap-1 p-3.5 px-6.5 bg-black rounded-full text-white text-sm'>
+          <button className='flex items-center gap-1 p-3.5 px-6.5 bg-black rounded-full text-white text-sm cursor-pointer'>
             <Image src='/assets/MaleUser.png' width={30} height={27} alt='user' />
             Login/Signup
           </button>
@@ -67,7 +69,7 @@ export default function Header() {
         {/* MOBILE MENU BUTTON */}
         <button
           aria-label="Open menu"
-          className="lg:hidden p-2 z-50"
+          className="lg:hidden p-2 z-50 cursor-pointer"
           onClick={() => setOpen(!open)}
         >
           <div className="space-y-1.5">
@@ -96,21 +98,21 @@ export default function Header() {
       >
         <div className="pt-24 pb-10 px-6 flex flex-col gap-4 justify-center items-center">
 
-          {[{ name: 'Home', path: '/' }, { name: 'Restaurants', path: '/Restaurants' }, { name: 'Cart', path: '/Cart' }].map(item => (
-            <a key={item.name}
+          {[{ name: 'Home', path: '/' }, { name: 'Restaurants', path: '/restaurants' }, { name: 'Cart', path: '/Cart' }].map(item => (
+            <Link key={item.name}
               href={item.path}>
               <button
                 onClick={() => setOpen(false)}
                 aria-current="page"
-                className="w-full text-lg font-medium px-4 py-2 rounded-full cursor-pointer transition-all duration-150 hover:bg-gray-900 hover:text-whiteactive:scale-95 active:bg-gray-900 active:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FC8A06]  focus-visible:ring-offset-2"
+                className="w-full text-lg font-medium px-4 py-2 rounded-full cursor-pointer transition-all duration-150 hover:bg-gray-900 hover:text-whiteactive:scale-95 active:bg-gray-900 active:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FC8A06]  focus-visible:ring-offset-2 hover:text-white"
               >
                 {item.name}
               </button>
-            </a>
+            </Link>
           ))}
 
           <button
-            className="mt-6 w-full bg-black text-white py-3 rounded-full font-semibold transition-all duration-150 hover:bg-gray-900 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FC8A06] focus-visible:ring-offset-2"
+            className="mt-6 w-full bg-black text-white py-3 rounded-full font-semibold transition-all duration-150 hover:bg-gray-900 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FC8A06] focus-visible:ring-offset-2 cursor-pointer"
           >
             Login / Signup
           </button>
