@@ -1,6 +1,6 @@
 import { Poppins } from 'next/font/google'
-import ContextProvider from './useContext/ContextProvider';
 import "./globals.css";
+import ContextProvider from './useContext/ContextProvider';
 
 
 const poppins = Poppins({
